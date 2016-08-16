@@ -3,7 +3,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
-	<h:html>
+	<html>
 		<h:head>
 			<title>Página de login</title>
 			
@@ -21,14 +21,14 @@
 			<div class="module form-module">
 				<div class="toggle">
 					<i class="fa fa-times fa-pencil"></i>
-					<div class="tooltip">Click Me</div>
+					<div class="tooltip">Registrar</div>
 				</div>
 				<div class="form">
 					<h2>Login da sua conta</h2>
-					<h:form prependId="false">
-						<input type="text" placeholder="Username" /> 
-						<input type="password" placeholder="Password" />
-						<h:button outcome="template.xhtml">Login</h:button>
+					<h:form prependId="false" id="formLogin">
+						<h:inputText /> 
+						<h:inputText />
+						<h:button outcome="pages/template/template.xhtml" value="Logar" />
 					</h:form>
 				</div>
 				<div class="form">
@@ -47,5 +47,5 @@
 	
 			<script src="resources/js/index.js"></script>
 		</h:body>
-	</h:html>
+	</html>
 </ui:composition>
