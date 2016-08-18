@@ -29,7 +29,6 @@
          <groupId>br.com.system</groupId>
          <artifactId>StockLibrary-ejb</artifactId>
          <type>ejb</type>
-         <scope>provided</scope>
       </dependency>
 
       <dependency>
@@ -49,24 +48,6 @@
          <artifactId>jboss-jsf-api_2.2_spec</artifactId>
          <scope>provided</scope>
       </dependency>
-
-      <dependency>
-         <groupId>org.hibernate.javax.persistence</groupId>
-         <artifactId>hibernate-jpa-2.1-api</artifactId>
-         <scope>provided</scope>
-      </dependency>
-
-       <dependency>
-           <groupId>org.hibernate</groupId>
-           <artifactId>hibernate-validator</artifactId>
-           <scope>provided</scope>
-           <exclusions>
-               <exclusion>
-                   <groupId>org.slf4j</groupId>
-                   <artifactId>slf4j-api</artifactId>
-               </exclusion>
-           </exclusions>
-       </dependency>
 
    </dependencies>
 
