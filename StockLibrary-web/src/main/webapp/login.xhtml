@@ -34,11 +34,9 @@
 				<div class="form">
 					<h2>Criar conta</h2>
 					<h:form prependId="false" id="formCadastro">
-						<input type="text" placeholder="Username" /> <input type="password"
-							placeholder="Password" /> <input type="email"
-							placeholder="Email Address" /> <input type="tel"
-							placeholder="Phone Number" />
-						<h:button value="Registrar" />
+						<h:inputText value="#{usuarioController.usuario.login}" /> 
+						<h:inputText value="#{usuarioController.usuario.senha}"/> 
+						<h:commandButton value="Registrar" action="#{usuarioController.salvar()}" />
 					</h:form>
 				</div>
 			</div>
