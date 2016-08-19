@@ -4,6 +4,12 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="StockLibrary-ejb-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/StockLibrary-ejb/StockLibrary-ejb">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="common-ejb-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/common-ejb/common-ejb">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="StockLibrary-web"/>
         <property name="java-output-path" value="/StockLibrary-web/target/classes"/>
     </wb-module>
