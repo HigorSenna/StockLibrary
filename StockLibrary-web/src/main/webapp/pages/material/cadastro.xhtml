@@ -7,11 +7,16 @@
 	
 	<ui:define name="corpoPagina">
 		<div>
-			<h:outputLabel value="Titulo"/>
-			<h:inputText class="form-control"/>
-			
-			<h:outputLabel value="Texto" />
-			<h:inputTextarea class="form-control" rows="20" />
+		<h1 style="width:100%;text-align:center;">Cadastro de Material</h1>
+			<h:form prependId="false">
+				<h:outputLabel value="Titulo"/>
+				<h:inputText class="form-control"/>
+				<h:outputLabel value="Categoria"/>
+				<h:inputText class="form-control"/>
+				
+				<h:outputLabel value="Texto" />
+				<h:inputTextarea class="form-control" rows="20" />
+			</h:form>
 		</div>
 	
 	</ui:define>
