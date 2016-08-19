@@ -6,7 +6,7 @@
 	
 	<ul class="nav navbar-nav side-nav">
 		<li class="active">
-			<h:link outcome="home.xhtml">
+			<h:link outcome="/pages/principal/home.xhtml">
 				<i class="fa fa-fw fa-dashboard"></i> 
 				Home
 			</h:link>
@@ -47,8 +47,12 @@
 			</a>
 			<ul id="demo" class="collapse">
 				<li>
-					<a href="#">Cadastrar Material</a>
+					<h:link outcome="/pages/material/cadastro.xhtml">
+						Cadastrar Material
+					</h:link>
+						
 				</li>
+				
 				<li>
 					<a href="#">Dropdown Item</a>
 				</li>
