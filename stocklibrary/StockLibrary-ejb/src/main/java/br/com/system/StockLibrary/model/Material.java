@@ -1,6 +1,7 @@
 package br.com.system.StockLibrary.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Material implements Serializable{
 	
@@ -10,6 +11,7 @@ public class Material implements Serializable{
 	private String categoria;
 	private String texto;
 	private Byte[] arquivo;
+	private Date dataPublicacao;
 	
 	public String getTitulo() {
 		return titulo;
@@ -34,5 +36,11 @@ public class Material implements Serializable{
 	}
 	public void setArquivo(Byte[] arquivo) {
 		this.arquivo = arquivo;
+	}
+	public Date getDataPublicacao() {
+		return dataPublicacao;
+	}
+	public void setDataPublicacao(Date dataPublicacao) {
+		this.dataPublicacao = dataPublicacao;
 	}			
 }
