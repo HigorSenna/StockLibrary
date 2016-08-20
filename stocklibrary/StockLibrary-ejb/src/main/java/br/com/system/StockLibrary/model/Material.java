@@ -1,17 +1,30 @@
 package br.com.system.StockLibrary.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "material")
 public class Material implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "idMaterial")
+	private Long id;
+	
+	@Column(name = "titulo")
 	private String titulo;
-	private String categoria;
+	
+	@Column(name = "texto")
 	private String texto;
-	private Byte[] arquivo;
-	private Date dataPublicacao;
 	
 	public String getTitulo() {
 		return titulo;
@@ -19,11 +32,11 @@ public class Material implements Serializable{
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public String getCategoria() {
-		return categoria;
+	public Long getId() {
+		return id;
 	}
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getTexto() {
 		return texto;
@@ -31,16 +44,4 @@ public class Material implements Serializable{
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
-	public Byte[] getArquivo() {
-		return arquivo;
-	}
-	public void setArquivo(Byte[] arquivo) {
-		this.arquivo = arquivo;
-	}
-	public Date getDataPublicacao() {
-		return dataPublicacao;
-	}
-	public void setDataPublicacao(Date dataPublicacao) {
-		this.dataPublicacao = dataPublicacao;
-	}			
 }
