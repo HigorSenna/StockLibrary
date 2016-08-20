@@ -6,22 +6,24 @@
 	template="../template/template.xhtml">
 	
 	<ui:define name="corpoPagina">
-		<div>
+		<div id="divCadastroMaterial">
 		<h1 style="width:100%;text-align:center;">Cadastro de Material</h1>
-			<h:form prependId="false">
+			<h:form prependId="false" id="formularioCadastroMaterial">
 				<h:outputLabel value="Titulo"/>
 				<h:inputText class="form-control"/>
 				<h:outputLabel value="Categoria"/>
 				<h:inputText class="form-control"/>
 				
-				<h:outputLabel value="Texto" />
-				<h:inputTextarea class="form-control" rows="20" />
-				
+				<h:outputLabel value="Conteúdo" />		
 				
 				<h:commandButton class="btn btn-primary" value="Cadastrar" id="botaoCadastroMaterial"/>
 			</h:form>
-		</div>
-	
+			
+			<button class="btn btn-primary" id="botaoAdicionarParagrafo">Adicionar Paragrafo</button>
+			Paragrafo: 0
+			<textarea class="form-control" rows="20" style="height: 39%; width: 52%;" id="textAreaConteudo" />
+				
+		</div>	
 	</ui:define>
 	
 </ui:composition>
