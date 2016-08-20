@@ -5,3 +5,7 @@ $("#botaoAdicionarParagrafo").click(function(){
 	$("#divCadastroMaterial").append("<br />" + textArea);
 	i++;
 });
+
+$("#botaoCadastroMaterial").click(function(){
+	'#{cadastroMaterialController.salvar()}';
+});
