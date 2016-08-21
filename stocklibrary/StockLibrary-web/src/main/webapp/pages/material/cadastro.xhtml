@@ -13,8 +13,10 @@
 				<h:inputText class="form-control"/>
 				<h:outputLabel value="Categoria"/>
 				<h:inputText class="form-control"/>	
-				<h:commandButton class="btn btn-primary" value="Cadastrar" id="botaoCadastroMaterial"/>
+
+				<h:commandButton  id="botaoCadastroMaterialHidden" action="#{cadastroMaterialController.salvar()}" style="display:none;" />
 			</h:form>
+				<h:commandButton class="btn btn-primary" value="Cadastrar" id="botaoCadastroMaterial" onclick="prepararInsercao();"/>
 			
 			<button class="btn btn-primary" id="botaoAdicionarParagrafo">Adicionar Paragrafo</button>
 			
