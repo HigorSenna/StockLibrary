@@ -44,4 +44,5 @@ public class Material implements Serializable{
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
+	
 }

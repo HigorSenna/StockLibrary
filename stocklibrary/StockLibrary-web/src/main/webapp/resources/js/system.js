@@ -13,5 +13,8 @@ function prepararInsercao() {
 		textoCompleto += "<p> " +  $(idCompleto).val() + " </p>";
 	}
 	alert(textoCompleto);	
+  
+  $("#textoCompleto").val(textoCompleto); 
+  
+  $("#botaoCadastroMaterialHidden").click();
 }
-//$("#botaoCadastroMaterialHidden").click();

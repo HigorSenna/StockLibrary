@@ -11,6 +11,7 @@ public class CadastroMaterialVM implements Serializable{
 
 	@Inject
 	private Material material;
+	
 
 	public Material getMaterial() {
 		return material;
@@ -19,5 +20,4 @@ public class CadastroMaterialVM implements Serializable{
 	public void setMaterial(Material material) {
 		this.material = material;
 	}
-	
 }

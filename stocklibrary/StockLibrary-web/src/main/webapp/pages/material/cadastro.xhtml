@@ -2,21 +2,21 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" 
 	template="../template/template.xhtml">
 	
 	<ui:define name="corpoPagina">
 		<div id="divCadastroMaterial">
-		<h1 style="width:100%;text-align:center;">Cadastro de Material</h1>
+			<p:messages id="message" showDetail="true" closable="true"/>
+			<h1 style="width:100%;text-align:center;">Cadastro de Material</h1>
 			<h:form prependId="false" id="formularioCadastroMaterial">
 				<h:outputLabel value="Titulo"/>
-				<h:inputText class="form-control"/>
-				<h:outputLabel value="Categoria"/>
-				<h:inputText class="form-control"/>	
-
-				<h:commandButton  id="botaoCadastroMaterialHidden" action="#{cadastroMaterialController.salvar()}" style="display:none;" />
+				<h:inputText class="form-control" value="#{cadastroMaterialController.cadastroMaterialVM.material.titulo}"/>
+				<h:inputTextarea value="#{cadastroMaterialController.cadastroMaterialVM.material.texto}" id="textoCompleto" style="display:none;"/>
+				<p:commandButton id="botaoCadastroMaterialHidden" action="#{cadastroMaterialController.salvar()}" style="display:none;" update="message"/>
 			</h:form>
-				<h:commandButton class="btn btn-primary" value="Cadastrar" id="botaoCadastroMaterial" onclick="prepararInsercao();"/>
+			<h:commandButton class="btn btn-primary" value="Cadastrar" id="botaoCadastroMaterial" onclick="prepararInsercao();"/>
 			
 			<button class="btn btn-primary" id="botaoAdicionarParagrafo">Adicionar Paragrafo</button>
 			
@@ -24,8 +24,6 @@
 			<br/>	
 			Paragrafo: 0
 			<textarea class="form-control" rows="20" style="height: 39%; width: 52%;" id="textAreaConteudo" />
-				
 		</div>
 	</ui:define>
-	
 </ui:composition>

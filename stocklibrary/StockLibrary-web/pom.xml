@@ -1,58 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-   <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-   <parent>
-      <artifactId>StockLibrary</artifactId>
-      <groupId>br.com.system</groupId>
-      <version>1.0</version>
-   </parent>
+	<parent>
+		<artifactId>StockLibrary</artifactId>
+		<groupId>br.com.system</groupId>
+		<version>1.0</version>
+	</parent>
 
-   <artifactId>StockLibrary-web</artifactId>
-   <packaging>war</packaging>
+	<artifactId>StockLibrary-web</artifactId>
+	<packaging>war</packaging>
 
-   <name>StockLibrary: WAR Module</name>
+	<name>StockLibrary: WAR Module</name>
 
-   <dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>br.com.system</groupId>
+			<artifactId>StockLibrary-ejb</artifactId>
+			<type>ejb</type>
+		</dependency>
 
-      <dependency>
-         <groupId>br.com.system</groupId>
-         <artifactId>StockLibrary-ejb</artifactId>
-         <type>ejb</type>
-      </dependency>
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>jaxrs-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
 
-      <dependency>
-         <groupId>org.jboss.resteasy</groupId>
-         <artifactId>jaxrs-api</artifactId>
-         <scope>provided</scope>
-      </dependency>
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
 
-      <dependency>
-         <groupId>javax.enterprise</groupId>
-         <artifactId>cdi-api</artifactId>
-         <scope>provided</scope>
-      </dependency>
-      
-      <dependency>
-         <groupId>org.jboss.spec.javax.faces</groupId>
-         <artifactId>jboss-jsf-api_2.2_spec</artifactId>
-         <scope>provided</scope>
-      </dependency>
+		<dependency>
+			<groupId>org.jboss.spec.javax.faces</groupId>
+			<artifactId>jboss-jsf-api_2.2_spec</artifactId>
+			<scope>provided</scope>
+		</dependency>
 
-   </dependencies>
+	</dependencies>
 
-   <build>
-      <finalName>${project.artifactId}</finalName>
-      <plugins>
-         <plugin>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>${version.war.plugin}</version>
-            <configuration>
-               <failOnMissingWebXml>false</failOnMissingWebXml>
-            </configuration>
-         </plugin>
-      </plugins>
-   </build>
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${version.war.plugin}</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

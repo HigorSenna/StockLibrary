@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="TA_USUARIO")
+@Table(name="usuario")
 public class Usuario implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -25,6 +25,9 @@ public class Usuario implements Serializable{
 	
 	@Column(name="senha")
 	private String senha;
+	
+	@Column(name = "tipo")
+	private String tipo;
 		
 	public Long getId() {
 		return id;
@@ -43,5 +46,11 @@ public class Usuario implements Serializable{
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 }

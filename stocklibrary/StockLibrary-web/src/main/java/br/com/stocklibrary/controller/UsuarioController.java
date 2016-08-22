@@ -9,6 +9,7 @@ import javax.inject.Named;
 import br.com.stocklibrary.model.Usuario;
 import br.com.stocklibrary.service.UsuarioService;
 
+
 @Named
 @ViewScoped
 public class UsuarioController implements Serializable{
@@ -16,10 +17,10 @@ public class UsuarioController implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Inject
-	private UsuarioService usuarioService;
+	private Usuario usuario;
 	
 	@Inject
-	private Usuario usuario;
+	private UsuarioService usuarioService;
 	
 	public void salvar(){
 		
