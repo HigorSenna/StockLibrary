@@ -41,4 +41,12 @@ public class UsuarioController implements Serializable{
 		this.usuario = usuario;
 	}
 
+	public UsuarioService getUsuarioService() {
+		return usuarioService;
+	}
+
+	public void setUsuarioService(UsuarioService usuarioService) {
+		this.usuarioService = usuarioService;
+	}
+
 }
