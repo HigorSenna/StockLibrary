@@ -9,16 +9,23 @@
 	<ui:define name="corpoPagina">
 		<div id="divCadastroMaterial">
 			<p:messages id="message" showDetail="true" closable="true"/>
+			
 			<h1 style="width:100%;text-align:center;">Cadastro de Material</h1>
+			
 			<h:form prependId="false" id="formularioCadastroMaterial">
 				<h:outputLabel value="Titulo"/>
-				<h:inputText class="form-control" value="#{cadastroMaterialController.cadastroMaterialVM.material.titulo}"/>
+				<h:inputText class="form-control" value="#{cadastroMaterialController.cadastroMaterialVM.material.titulo}" style="width: 52%;"/>
 				<h:inputTextarea value="#{cadastroMaterialController.cadastroMaterialVM.material.texto}" id="textoCompleto" style="display:none;"/>
 				<p:commandButton id="botaoCadastroMaterialHidden" action="#{cadastroMaterialController.salvar()}" style="display:none;" update="message"/>
 			</h:form>
+			
+			<h:commandButton class="btn btn-danger" value="Remover Paragrafo" id="botaoRemoverParagrafo" onclick="removerParagrafo();"/>
+			<button class="btn btn-primary" id="botaoAdicionarParagrafo">Adicionar Paragrafo</button>
 			<h:commandButton class="btn btn-primary" value="Cadastrar" id="botaoCadastroMaterial" onclick="prepararInsercao();"/>
 			
-			<button class="btn btn-primary" id="botaoAdicionarParagrafo">Adicionar Paragrafo</button>
+			<br/>			
+			<br/>			
+			<br/>			
 			
 			<h:outputLabel value="Conteúdo" />
 			<br/>	
