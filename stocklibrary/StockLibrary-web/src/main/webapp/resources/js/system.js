@@ -8,12 +8,11 @@ $("#botaoAdicionarParagrafo").click(function(){
 	
 	var textAreaFinal = tagH5 + aberturaTagTextArea + id + fechamentoTagTextArea;
 	$("#divCadastroMaterial").append(textAreaFinal);	
-		
 });
 
 function prepararInsercao() {
 	var textoCompleto ="<p> " + $("#textAreaConteudo").val() + " </p>";
-	for(j = 0;j <= window.i;j++){		
+	for(j = 1;j <= window.i;j++){		
 		var idCompleto = "#textAreaConteudo"+j;
 		textoCompleto += "<p> " +  $(idCompleto).val() + " </p>";
 	}
@@ -32,5 +31,4 @@ function removerParagrafo(){
 		$("#espacoText"+i).remove();
 		window.i = i-1;
 	}
-	
 }
