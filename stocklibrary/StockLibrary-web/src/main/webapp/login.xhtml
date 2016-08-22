@@ -2,7 +2,8 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
 	<html>
 		<h:head>
 			<title>Página de login</title>
@@ -24,6 +25,7 @@
 					<div class="tooltip">Registrar</div>
 				</div>
 				<div class="form">
+					<p:messages id="messagesLogin" showDetail="true" closable="true"/>
 					<h2>Login da sua conta</h2>
 					<h:form prependId="false" id="formLogin">
 						<h:inputText /> 
@@ -34,9 +36,9 @@
 				<div class="form">
 					<h2>Criar conta</h2>
 					<h:form prependId="false" id="formCadastro">
-						<h:inputText value="#{usuarioController.usuario.login}" /> 
-						<h:inputText value="#{usuarioController.usuario.senha}"/> 
-						<h:commandButton value="Registrar" action="#{usuarioController.salvar()}" />
+						<h:inputText value="#{cadastroUsuarioController.cadastroUsuarioVM.usuario.login}" /> 
+						<h:inputText value="#{cadastroUsuarioController.cadastroUsuarioVM.usuario.senha}"/> 
+						<p:commandButton value="Registrar" action="#{cadastroUsuarioController.salvar()}"  update="messagesLogin" id="botaoCadastroLogin"/>
 					</h:form>
 				</div>
 			</div>

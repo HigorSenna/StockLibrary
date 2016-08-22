@@ -3,7 +3,7 @@ package br.com.stocklibrary.enuns;
 public enum TipoMensagemEnum {
 	
 	ALERTA("Alerta","A"),
-	ERRRO("Erro","E"),
+	ERRO("Erro","E"),
 	SUCESSO("Sucesso","S");
 	
 	private String valor;

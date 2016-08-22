@@ -11,7 +11,7 @@ public class MessagesAndRedirect {
 		FacesContext.getCurrentInstance().getExternalContext().getFlash().setKeepMessages(true);		
 	}
 	
-	public static void exibirMensagemRedirect(String msg,String paginaRedirecionar,TipoMensagemEnum tipoMensagem) throws Exception{
+	public static void exibirMensagemRedirect(String msg,String paginaRedirecionar,TipoMensagemEnum tipoMensagem){
 		FacesMessage formatoMensagem;
 		
 		if(tipoMensagem.getValor().equals("S")){
@@ -29,7 +29,11 @@ public class MessagesAndRedirect {
 		redirecionarPara(paginaRedirecionar);
 	}
 	
-	public static void redirecionarPara(String pagina) throws Exception{
-		 FacesContext.getCurrentInstance().getExternalContext().redirect(pagina);
+	public static void redirecionarPara(String pagina){
+		try {
+			FacesContext.getCurrentInstance().getExternalContext().redirect(pagina);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
