@@ -13,9 +13,9 @@
 			<h1 style="width:100%;text-align:center;">Cadastro de Material</h1>
 			
 			<h:form prependId="false" id="formularioCadastroMaterial">
-				<h:outputLabel value="Titulo"/>
-				<h:inputText class="form-control" value="#{cadastroMaterialController.cadastroMaterialVM.material.titulo}" style="width: 52%;"/>
-				<h:inputTextarea value="#{cadastroMaterialController.cadastroMaterialVM.material.texto}" id="textoCompleto" style="display:none;"/>
+				<p:outputLabel value="Titulo" for="titulo"/>
+				<p:inputText id="titulo" class="form-control" value="#{cadastroMaterialController.cadastroMaterialVM.material.titulo}" style="width: 52%;" required="true"/>
+				<h:inputTextarea value="#{cadastroMaterialController.cadastroMaterialVM.material.texto}" id="textoCompleto" style="display:none;" required="true"/>
 				<p:commandButton id="botaoCadastroMaterialHidden" action="#{cadastroMaterialController.salvar()}" style="display:none;" update="message"/>
 			</h:form>
 			
@@ -29,8 +29,8 @@
 			
 			<h:outputLabel value="Conteúdo" />
 			<br/>	
-			Paragrafo: 0
-			<textarea class="form-control" rows="20" style="height: 39%; width: 52%;" id="textAreaConteudo" />
+			<h5 id="paragrafo0">Paragrafo: 0 *</h5>
+			<textarea class="form-control" rows="20" style="height: 39%; width: 52%;" id="textAreaConteudo" required="required"/>
 		</div>
 	</ui:define>
 </ui:composition>
