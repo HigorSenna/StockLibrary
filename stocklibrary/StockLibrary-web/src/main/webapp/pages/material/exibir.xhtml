@@ -7,6 +7,9 @@
 	template="../template/template.xhtml">
 	
 	<ui:define name="corpoPagina">
+		<h2>
+			<p:outputLabel escape="false" value="#{consultaMaterialController.consultaMaterialVM.material.titulo}"/>
+		</h2>
 		<p:outputLabel escape="false" value="#{consultaMaterialController.consultaMaterialVM.material.texto}" />
 	</ui:define>	
 </ui:composition>
