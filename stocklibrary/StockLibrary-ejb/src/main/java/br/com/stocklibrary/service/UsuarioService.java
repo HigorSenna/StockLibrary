@@ -4,13 +4,11 @@ import java.io.Serializable;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.inject.Named;
 
 import br.com.stocklibrary.dao.UsuarioDAO;
 import br.com.stocklibrary.model.Usuario;
 
 @Stateless
-@Named
 public class UsuarioService implements Serializable{
 	
 	private static final long serialVersionUID = 1L;

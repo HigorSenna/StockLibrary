@@ -1,8 +1,11 @@
 package br.com.stocklibrary.service;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.inject.Inject;
 
 import br.com.stocklibrary.dao.MaterialDAO;
@@ -17,5 +20,15 @@ public class MaterialService implements Serializable{
 	
 	public void salvar(Material material) throws Exception{
 		materialDAO.salvar(material);
+	}
+	
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+	public List<Material> buscarTodos() throws Exception{
+		return materialDAO.buscarTodos();
+	}
+	
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+	public Material buscar(Long id) throws Exception{
+		return materialDAO.buscarPor(id);
 	}
 }

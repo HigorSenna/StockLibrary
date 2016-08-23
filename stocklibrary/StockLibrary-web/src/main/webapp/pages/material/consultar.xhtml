@@ -8,9 +8,79 @@
 	
 	<ui:define name="corpoPagina">
 		<div id="paginaConsultaMateriais">
-			<h:dataTable var="material" class="table table-striped">
-			</h:dataTable>
-		</div>
+			<p:dataTable  styleClass="table" var="material" value="${consultaMaterialController.consultaMaterialVM.materiais}" rows="20" id="myTable" style="border:none;"
+			paginator="true" emptyMessage="Nenhum registro encontrado!">
+				<p:column style="text-align:center;">
+					
+					<h:link outcome="/pages/material/exibir.xhtml" value="#{material.titulo}">
+						<f:param name="id" value="#{material.id}"/>
+						<f:param name="visualizacao" value="true" />
+					</h:link>
+				</p:column>
+			</p:dataTable>
+		</div>		
+		
+		<style>
+				
+			.table tr,td,th,thead,tbody
+			{
+				background:none !important;
+				background-color:none !important;
+				border:none !important;
+			}
+			
+				/*BOTOES PAGINACAO TABLE*/
+			.table .ui-paginator-first.ui-state-default.ui-corner-all.ui-state-disabled
+			{
+				background: -moz-linear-gradient(#FFCC66, #FF9966) !important;
+				border:none !important;
+			}
+			
+			.table .ui-paginator-prev.ui-state-default.ui-corner-all.ui-state-disabled
+			{
+				background: -moz-linear-gradient(#FFCC66, #FF9966) !important;
+				border:none !important;
+			}
+			
+			.table .ui-paginator-next.ui-state-default.ui-corner-all.ui-state-disabled
+			{
+				background: -moz-linear-gradient(#FFCC66, #FF9966) !important;
+				border:none !important;
+			}
+			.table .ui-paginator-last.ui-state-default.ui-corner-all.ui-state-disabled
+			{
+				background: -moz-linear-gradient(#FFCC66, #FF9966) !important;
+				border:none !important;
+			}
+			.table .ui-paginator-pages
+			{
+				background:none !important;
+				background-color: none !important;
+			}
+			.table .ui-paginator-page.ui-state-default.ui-state-active.ui-corner-all
+			{
+				background:none !important;
+				background-color: none !important;
+				border:none !important;
+			}
+				/*END BOTOES PAGIANAÇÃO TABLE*/
+			
+			.table a
+			{
+				color:#5882FA !important;
+			}
+			
+			.table .ui-paginator.ui-paginator-top
+			{
+				background:none;
+				border:none;
+			}
+			
+			.table .ui-paginator.ui-paginator-bottom
+			{
+				background:none;
+				border:none;
+			}
+		</style>
 	</ui:define>	
-	
 </ui:composition>
