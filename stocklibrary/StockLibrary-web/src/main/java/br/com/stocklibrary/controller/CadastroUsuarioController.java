@@ -42,4 +42,12 @@ public class CadastroUsuarioController implements Serializable{
 	public void setCadastroUsuarioVM(CadastroUsuarioVM cadastroUsuarioVM) {
 		this.cadastroUsuarioVM = cadastroUsuarioVM;
 	}
+
+	public UsuarioService getUsuarioService() {
+		return usuarioService;
+	}
+
+	public void setUsuarioService(UsuarioService usuarioService) {
+		this.usuarioService = usuarioService;
+	}
 }
