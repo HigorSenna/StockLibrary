@@ -17,7 +17,10 @@ function prepararInsercao() {
 	
 	for(j = 1;j <= window.i;j++){		
 		var idCompleto = "#textAreaConteudo"+j;
-		textoCompleto += "<p> " +  $(idCompleto).val() + " </p>";
+		
+		if(isCampoValido($(idCompleto).val())){
+			textoCompleto += "<p>" +  $(idCompleto).val() + "</p>";
+		}
 	}
 	
 	  $("#Conteudo").val(textoCompleto); 
