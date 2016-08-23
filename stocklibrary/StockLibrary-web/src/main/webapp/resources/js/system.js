@@ -26,7 +26,9 @@ function prepararInsercao() {
 	  $("#Conteudo").val(textoCompleto); 
 	  
 	  $("#botaoCadastroMaterialHidden").click();
+	  setTimeout(function() {$('#message').hide(1000);}, 5000);
 }
+
 
 function removerParagrafo(){
 	if(i > 0){

@@ -8,7 +8,7 @@
 	
 	<ui:define name="corpoPagina">
 		<div id="divCadastroMaterial">
-			<p:messages id="message" showDetail="true" closable="true"/>
+			<p:messages id="message" closable="true"/>
 			
 			<h1 style="width:100%;text-align:center;">Cadastro de Material</h1>
 			
@@ -16,7 +16,7 @@
 				<p:outputLabel value="Titulo" for="titulo"/>
 				<p:inputText id="titulo" class="form-control" value="#{cadastroMaterialController.cadastroMaterialVM.material.titulo}" style="width: 52%;" required="true"/>
 				<h:inputTextarea value="#{cadastroMaterialController.cadastroMaterialVM.material.texto}" id="Conteudo" style="display:none;" required="true"/>
-				<p:commandButton id="botaoCadastroMaterialHidden" action="#{cadastroMaterialController.salvar()}" style="display:none;" update="message" validateClient="true"/>
+				<p:commandButton id="botaoCadastroMaterialHidden" action="#{cadastroMaterialController.salvar()}" style="display:none;" update="message" />
 			</h:form>
 			
 			<h:commandButton class="btn btn-danger" value="Remover Paragrafo" id="botaoRemoverParagrafo" onclick="removerParagrafo();"/>
