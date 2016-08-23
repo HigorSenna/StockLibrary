@@ -15,13 +15,13 @@ public class MessagesAndRedirect {
 		FacesMessage formatoMensagem;
 		
 		if(tipoMensagem.getValor().equals("S")){
-			formatoMensagem = new FacesMessage(FacesMessage.SEVERITY_INFO,"",msg);	
+			formatoMensagem = new FacesMessage(FacesMessage.SEVERITY_INFO,msg,"");	
 		}
 		else if(tipoMensagem.getValor().equals("E")){
-			formatoMensagem = new FacesMessage(FacesMessage.SEVERITY_ERROR,"",msg);		
+			formatoMensagem = new FacesMessage(FacesMessage.SEVERITY_ERROR,msg,"");		
 		}
 		else{
-			formatoMensagem = new FacesMessage(FacesMessage.SEVERITY_WARN,"",msg);
+			formatoMensagem = new FacesMessage(FacesMessage.SEVERITY_WARN,msg,"");
 		}
 			
 		manterMensagemAoRedirecionar();
