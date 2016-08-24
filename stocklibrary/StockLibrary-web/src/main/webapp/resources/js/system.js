@@ -1,4 +1,6 @@
 window.i = 0;
+window.espacoParagrafo="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+
 $("#botaoAdicionarParagrafo").click(function(){
 	i++;
 	var id = "id = textAreaConteudo"+i;
@@ -12,14 +14,14 @@ $("#botaoAdicionarParagrafo").click(function(){
 
 function prepararInsercao() {
 	if(isCampoValido($("#textAreaConteudo").val())){
-		var textoCompleto ="<p>" + $("#textAreaConteudo").val() + "</p>";
+		var textoCompleto ="<p>"+espacoParagrafo + $("#textAreaConteudo").val() + "</p>";
 	}
 	
 	for(j = 1;j <= window.i;j++){		
 		var idCompleto = "#textAreaConteudo"+j;
 		
 		if(isCampoValido($(idCompleto).val())){
-			textoCompleto += "<p>" +  $(idCompleto).val() + "</p>";
+			textoCompleto += "<p>"+espacoParagrafo +  $(idCompleto).val() + "</p>";
 		}
 	}
 	
