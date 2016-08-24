@@ -5,9 +5,10 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 	
-	<p:dialog id="#{idModal}" header="#{tituloModal}" widgetVar="modalConfirmacao" modal="true" height="100">
+	<p:dialog id="#{idModal}" header="#{tituloModal}" widgetVar="modalConfirmacao" modal="true" height="100" closable="false">
 		<h:form prependId="false">
-			<h:commandButton value="Sim" />
+			<p:commandButton value="Sim" action="#{bean['excluir']()}" update="#{mensagemUpdate}"/>
+			<p:commandButton value="Não" onclick="$('#modalConfirmacao').hide();"/>
 		</h:form>
 	</p:dialog>
 </ui:composition>

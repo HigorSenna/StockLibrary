@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 
 import br.com.stocklibrary.dao.MaterialDAO;
 import br.com.stocklibrary.model.Material;
@@ -17,6 +18,11 @@ public class MaterialService implements Serializable{
 	
 	@Inject
 	private MaterialDAO materialDAO;
+	
+	@Transactional
+	public void excluir(Material material) throws Exception{
+		materialDAO.deletar(material);
+	}
 	
 	public void salvar(Material material) throws Exception{
 		materialDAO.salvar(material);

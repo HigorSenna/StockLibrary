@@ -14,6 +14,8 @@ public class ConsultaMaterialVM implements Serializable{
 	private List<Material> materiais;
 	
 	private boolean visualizacao = true;
+	
+	private Material materialExcluir;
 
 	public List<Material> getMateriais() {
 		return materiais;
@@ -37,5 +39,13 @@ public class ConsultaMaterialVM implements Serializable{
 
 	public void setVisualizacao(boolean visualizacao) {
 		this.visualizacao = visualizacao;
+	}
+
+	public Material getMaterialExcluir() {
+		return materialExcluir;
+	}
+
+	public void setMaterialExcluir(Material materialExcluir) {
+		this.materialExcluir = materialExcluir;
 	}
 }

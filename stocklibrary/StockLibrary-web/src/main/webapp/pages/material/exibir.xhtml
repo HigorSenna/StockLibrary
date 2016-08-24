@@ -8,19 +8,26 @@
 	
 	<ui:define name="corpoPagina">
 		<div id="botoesExibir">
+		<p:messages id="mensagesConsultar"/>
 			<h:button class="btn btn-default" outcome="consultar.xhtml" value="Voltar"/>
 			<h:commandButton class="btn btn-info" value="Editar"/>
-			<h:commandButton class="btn btn-danger" value="Excluir" onclick="$('#modalConfirmacao').show();" process="@this"/>
+			
+			<h:form prependId="false">
+				<p:commandLink class="btn btn-danger" value="Excluir" onclick="$('#modalConfirmacao').show();" action="#{consultaMaterialController.prepararParaExlcusao()}"/>
+			</h:form>
+			
+			<ui:include src="/pages/popup/modalConfirmacao.xhtml" >
+				<ui:param name="idModal" value="modalConfirmacao" />
+				<ui:param name="tituloModal" value="Deseja realmente Excluir?" />
+				<ui:param name="bean" value="#{consultaMaterialController}" />
+				<ui:param name="mensagemUpdate" value="mensagesConsultar" />
+			</ui:include>
 		</div>
 		
 		<h2>
 			<p:outputLabel escape="false" value="#{consultaMaterialController.consultaMaterialVM.material.titulo}"/>
 		</h2>
-		<p:outputLabel escape="false" value="#{consultaMaterialController.consultaMaterialVM.material.texto}" style="text-align:justify;" />
 		
-		<ui:include src="/pages/popup/modalConfirmacao.xhtml" >
-			<ui:param name="idModal" value="modalConfirmacao" />
-			<ui:param name="tituloModal" value="Deseja Realmente Excluir?" />
-		</ui:include>
+		<p:outputLabel escape="false" value="#{consultaMaterialController.consultaMaterialVM.material.texto}" style="text-align:justify;" />
 	</ui:define>	
 </ui:composition>

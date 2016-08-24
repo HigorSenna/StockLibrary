@@ -9,8 +9,6 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.primefaces.context.RequestContext;
-
 import br.com.stocklibrary.enuns.TipoMensagemEnum;
 import br.com.stocklibrary.model.Material;
 import br.com.stocklibrary.service.MaterialService;
@@ -37,6 +35,20 @@ public class ConsultaMaterialController implements Serializable{
 	
 	public void modoVizualizacao(){
 		consultaMaterialVM.setVisualizacao(true);
+	}
+	
+	public void prepararParaExlcusao(){
+		Material materialExclusao = consultaMaterialVM.getMaterial();
+		consultaMaterialVM.setMaterialExcluir(materialExclusao);
+	}
+	
+	public void excluir(){
+		try {
+			materialService.excluir(consultaMaterialVM.getMaterialExcluir());
+			MessagesAndRedirect.exibirMensagemRedirect("Registro excluído", "consultar.xhtml", TipoMensagemEnum.SUCESSO);
+		} catch (Exception e) {
+			MessagesAndRedirect.exibirMensagemRedirect("Falha ao excluir", "consultar.xhtml", TipoMensagemEnum.ERRO);
+		}
 	}
 	
 	public void buscar(){
