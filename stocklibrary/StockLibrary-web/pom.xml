@@ -23,6 +23,7 @@
 		<dependency>
 			<groupId>br.com.system</groupId>
 			<artifactId>StockLibrary-ejb</artifactId>
+			<scope>provided</scope>
 			<type>ejb</type>
 		</dependency>
 
