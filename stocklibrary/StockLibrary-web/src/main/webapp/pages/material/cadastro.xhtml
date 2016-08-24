@@ -14,7 +14,7 @@
 			
 			<h:form prependId="false" id="formularioCadastroMaterial">
 				<p:outputLabel value="Titulo" for="titulo"/>
-				<p:inputText id="titulo" class="form-control" value="#{cadastroMaterialController.cadastroMaterialVM.material.titulo}" style="width: 52%;" required="true"/>
+				<p:inputText id="titulo" class="form-control" value="#{cadastroMaterialController.cadastroMaterialVM.material.titulo}" style="width: 52%;" required="true" validator="blankValidator"/>
 				<h:inputTextarea value="#{cadastroMaterialController.cadastroMaterialVM.material.texto}" id="Conteudo" style="display:none;" required="true"/>
 				<p:commandButton id="botaoCadastroMaterialHidden" action="#{cadastroMaterialController.salvar()}" style="display:none;" update="message" />
 			</h:form>
