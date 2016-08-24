@@ -20,10 +20,10 @@ public class Material implements Serializable{
 	@Column(name = "idMaterial")
 	private Long id;
 	
-	@Column(name = "titulo")
+	@Column(name = "titulo" , length = 60)
 	private String titulo;
 	
-	@Column(name = "texto")
+	@Column(name = "texto", length = 8000)
 	private String texto;
 	
 	public String getTitulo() {
@@ -44,5 +44,4 @@ public class Material implements Serializable{
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
-	
 }
