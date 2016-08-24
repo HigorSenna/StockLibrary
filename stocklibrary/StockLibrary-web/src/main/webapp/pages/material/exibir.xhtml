@@ -7,9 +7,14 @@
 	template="../template/template.xhtml">
 	
 	<ui:define name="corpoPagina">
+		<div id="botoesExibir">
+			<h:button class="btn btn-default" outcome="consultar.xhtml" value="Voltar"/>
+			<h:commandButton class="btn btn-info" value="Editar"/>
+			<h:commandButton class="btn btn-danger" value="Excluir"/> 
+		</div>
 		<h2>
 			<p:outputLabel escape="false" value="#{consultaMaterialController.consultaMaterialVM.material.titulo}"/>
 		</h2>
-		<p:outputLabel escape="false" value="#{consultaMaterialController.consultaMaterialVM.material.texto}" />
+		<p:outputLabel escape="false" value="#{consultaMaterialController.consultaMaterialVM.material.texto}" style="text-align:justify;" />
 	</ui:define>	
 </ui:composition>
