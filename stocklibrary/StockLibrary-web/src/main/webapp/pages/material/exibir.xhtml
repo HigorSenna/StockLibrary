@@ -10,11 +10,17 @@
 		<div id="botoesExibir">
 			<h:button class="btn btn-default" outcome="consultar.xhtml" value="Voltar"/>
 			<h:commandButton class="btn btn-info" value="Editar"/>
-			<h:commandButton class="btn btn-danger" value="Excluir"/> 
+			<h:commandButton class="btn btn-danger" value="Excluir" onclick="$('#modalConfirmacao').show();" process="@this"/>
 		</div>
+		
 		<h2>
 			<p:outputLabel escape="false" value="#{consultaMaterialController.consultaMaterialVM.material.titulo}"/>
 		</h2>
 		<p:outputLabel escape="false" value="#{consultaMaterialController.consultaMaterialVM.material.texto}" style="text-align:justify;" />
+		
+		<ui:include src="/pages/popup/modalConfirmacao.xhtml" >
+			<ui:param name="idModal" value="modalConfirmacao" />
+			<ui:param name="tituloModal" value="Deseja Realmente Excluir?" />
+		</ui:include>
 	</ui:define>	
 </ui:composition>
