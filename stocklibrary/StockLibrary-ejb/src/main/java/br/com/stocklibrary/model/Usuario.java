@@ -27,7 +27,7 @@ public class Usuario implements Serializable{
 	private String senha;
 	
 	@Column(name = "tipo")
-	private String tipo = "A";
+	private String tipo = "C";
 		
 	public Long getId() {
 		return id;
@@ -51,8 +51,11 @@ public class Usuario implements Serializable{
 		return tipo;
 	}
 	public void setTipo(String tipo) {
-		this.tipo = tipo;
+		if(tipo !=null && tipo.equals("true")){
+			this.tipo = "A";
+		}
+		else{
+			this.tipo = "C";
+		}
 	}
-	
-	
 }

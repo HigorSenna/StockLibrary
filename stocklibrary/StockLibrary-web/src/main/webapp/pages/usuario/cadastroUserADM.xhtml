@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="../template/template.xhtml">
+
+	<ui:define name="corpoPagina">
+		<h2>Cadastro de usuário</h2>
+		<h:form prependId="false">
+			<div class="form-group">
+				<label for="login">Login</label> 
+				<h:inputText type="text" class="form-control" id="login" placeholder="Digite o login." style="width: 50%;" value="#{cadastroUsuarioController.cadastroUsuarioVM.usuario.login}"/>
+			</div>
+			<div class="form-group">
+				<label for="senha">Senha</label>
+				<h:inputText type="text" class="form-control" id="senha" placeholder="Digite a senha.." style="width: 50%;" value="#{cadastroUsuarioController.cadastroUsuarioVM.usuario.senha}"/>
+			</div>
+			
+			<div class="form-group">
+				<p:selectBooleanCheckbox value="#{cadastroUsuarioController.cadastroUsuarioVM.usuario.tipo}" id="checkboxADM" >
+					<p:ajax process="@this checkboxADM"/>
+				</p:selectBooleanCheckbox>
+				<label for="checkboxADM">Administrador </label>
+			</div>
+			<h:commandButton value="Cadastrar" class="btn btn-success" action="#{cadastroUsuarioController.salvar()}"/>
+		</h:form>
+	</ui:define>
+</ui:composition>

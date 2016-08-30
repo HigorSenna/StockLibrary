@@ -28,16 +28,17 @@ public class CadastroUsuarioController implements Serializable{
 		
 		try {
 			usuarioService.salvar(cadastroUsuarioVM.getUsuario());
-			MessagesAndRedirect.exibirMensagemRedirect("Usuário inserido com sucesso!!", "login.xhtml", TipoMensagemEnum.SUCESSO);
+			MessagesAndRedirect.exibirMensagemRedirect("Usuário inserido com sucesso!!", "/StockLibrary-web/", TipoMensagemEnum.SUCESSO);
 		} catch (Exception e) {
-			MessagesAndRedirect.exibirMensagemRedirect("Falha ao inserir usuário", "login.xhtml", TipoMensagemEnum.ERRO);
+			MessagesAndRedirect.exibirMensagemRedirect("Falha ao inserir usuário", "/StockLibrary-web/", TipoMensagemEnum.ERRO);
 			e.printStackTrace();
 		}
 	}
-
+	
 	public CadastroUsuarioVM getCadastroUsuarioVM() {
 		return cadastroUsuarioVM;
 	}
+	
 
 	public void setCadastroUsuarioVM(CadastroUsuarioVM cadastroUsuarioVM) {
 		this.cadastroUsuarioVM = cadastroUsuarioVM;
