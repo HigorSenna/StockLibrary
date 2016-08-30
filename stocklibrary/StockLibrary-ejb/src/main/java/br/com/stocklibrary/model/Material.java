@@ -1,6 +1,8 @@
 package br.com.stocklibrary.model;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,6 +28,14 @@ public class Material implements Serializable{
 	@Column(name = "texto", length = 8000)
 	private String texto;
 	
+	@Column(name = "dt_postagem")
+	private Date dataPostagem = new Date();
+	
+	public String getDataSimples(){
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		return simpleDateFormat.format(this.dataPostagem);
+	}
+	
 	public String getTitulo() {
 		return titulo;
 	}
@@ -44,6 +54,14 @@ public class Material implements Serializable{
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
+	
+	public Date getDataPostagem() {
+		return dataPostagem;
+	}
+	public void setDataPostagem(Date dataPostagem) {
+		this.dataPostagem = dataPostagem;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
