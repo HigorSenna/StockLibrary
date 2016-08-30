@@ -2,6 +2,7 @@ package br.com.stocklibrary.controller;
 
 import java.io.Serializable;
 
+import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -25,9 +26,23 @@ public class LoginController implements Serializable{
 	@Inject
 	private LoginVM loginVM;
 	
+	@PostConstruct
+	public void init(){
+		System.out.println("asas");
+	}
+	
 	public void logar(){
 		Usuario usuarioRetornado = usuarioService.buscarUsuario(loginVM.getUsuario());
 		abrirSessaoUsuario(usuarioRetornado);
+	}
+	public void validarSessao(){
+		if(SessionUtils.existeSessao("usuario")){
+			Usuario usuarioSessao = (Usuario) SessionUtils.pegarSessao("usuario");
+			validarTipoUsuario(usuarioSessao);
+		}else{
+			MessagesAndRedirect.exibirMensagemGlobalRedirect("Você não está logado!!", "/StockLibrary-web/", TipoMensagemEnum.ERRO);
+//			MessagesAndRedirect.exibirMensagemRedirect("Você não está logado!!", "/StockLibrary-web/", TipoMensagemEnum.ERRO);
+		}
 	}
 	
 	private void abrirSessaoUsuario(Usuario usuario){

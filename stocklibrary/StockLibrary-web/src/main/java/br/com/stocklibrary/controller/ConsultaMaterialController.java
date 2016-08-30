@@ -9,11 +9,14 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.hibernate.Session;
+
 import br.com.stocklibrary.enuns.TipoMensagemEnum;
 import br.com.stocklibrary.model.Material;
 import br.com.stocklibrary.service.MaterialService;
 import br.com.stocklibray.vm.ConsultaMaterialVM;
 import br.com.system.StockLibrary.util.MessagesAndRedirect;
+import br.com.system.StockLibrary.util.SessionUtils;
 
 @Named
 @ViewScoped
