@@ -17,12 +17,44 @@
 				Charts
 			</a>
 		</li>
+		
 		<li>
-			<h:link outcome="/pages/material/consultar.xhtml">
-				<i class="fa fa-fw fa-table"></i>
-				Consultar Material
-			</h:link>
+			<a href="javascript:;" data-toggle="collapse" data-target="#cadastros">
+				<i class="fa fa-fw fa-arrows-v"></i> 
+				Cadastros
+				<i class="fa fa-fw fa-caret-down"></i>
+			</a>
+			<ul id="cadastros" class="collapse">
+				<li>
+					<h:link outcome="/pages/material/cadastro.xhtml">
+						Material
+					</h:link>
+				</li>
+				
+				<li>
+					<a href="#">Usuário</a>
+				</li>
+			</ul>
 		</li>
+		<li>
+			<a href="javascript:;" data-toggle="collapse" data-target="#consultas">
+				<i class="fa fa-fw fa-table"></i>
+				Consultas
+				<i class="fa fa-fw fa-caret-down"></i>
+			</a>
+			<ul id="consultas" class="collapse">
+				<li>
+					<h:link  outcome="/pages/material/consultar.xhtml">
+						Material
+					</h:link>
+				</li>
+				
+				<li>
+					<a href="#">Usuário</a>
+				</li>
+			</ul>
+		</li>
+		
 		<li><a href="forms.html">
 			<i class="fa fa-fw fa-edit"></i>
 				Forms
@@ -39,24 +71,7 @@
 				Bootstrap Grid
 			</a>
 		</li>
-		<li>
-			<a href="javascript:;" data-toggle="collapse" data-target="#demo">
-				<i class="fa fa-fw fa-arrows-v"></i> 
-				Gerenciar
-				<i class="fa fa-fw fa-caret-down"></i>
-			</a>
-			<ul id="demo" class="collapse">
-				<li>
-					<h:link outcome="/pages/material/cadastro.xhtml">
-						Cadastrar Material
-					</h:link>
-				</li>
-				
-				<li>
-					<a href="#">Dropdown Item</a>
-				</li>
-			</ul>
-		</li>
+		
 		<li>
 			<a href="blank-page.html">
 				<i class="fa fa-fw fa-file"></i>
