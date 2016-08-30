@@ -23,9 +23,15 @@ public class SessionUtils {
 	}
 
 	public static boolean existeSessao(String nomeSessao) {
-		if (session.getAttribute(nomeSessao) != null) {
-			return true;
+		if(session != null){
+			if (session.getAttribute(nomeSessao) != null) {
+				return true;
+			}
 		}
 		return false;
+	}
+	
+	public static Object pegarSessao(String nomeSessao){
+		return (Object) session.getAttribute(nomeSessao);
 	}
 }
