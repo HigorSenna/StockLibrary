@@ -7,7 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+
+@NamedQuery(name="Usuario.buscarLoginSenha", 
+query="select u from Usuario u where u.login =:l and u.senha =:s")
 
 @Entity
 @Table(name="usuario")
@@ -17,7 +21,7 @@ public class Usuario implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
+	@Column(name="idUsuario")
 	private Long id;
 	
 	@Column(name="login")

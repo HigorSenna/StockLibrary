@@ -28,9 +28,9 @@
 					<p:messages id="messagesLogin" closable="true"/>
 					<h2>Login da sua conta</h2>
 					<h:form prependId="false" id="formLogin">
-						<h:inputText /> 
-						<h:inputText />
-						<h:button outcome="pages/principal/home.xhtml" value="Logar" />
+						<h:inputText value="#{loginController.loginVM.usuario.login}" required="true"/> 
+						<h:inputText value="#{loginController.loginVM.usuario.senha}" required="true"/>
+						<h:commandButton outcome="pages/principal/home.xhtml" value="Logar" action="#{loginController.logar()}"/>
 					</h:form>
 				</div>
 				<div class="form">

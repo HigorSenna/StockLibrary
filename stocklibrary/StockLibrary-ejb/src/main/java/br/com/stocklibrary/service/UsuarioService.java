@@ -19,4 +19,8 @@ public class UsuarioService implements Serializable{
 	public void salvar(Usuario usuario) throws Exception{
 		usuarioDAO.salvar(usuario);
 	}
+	
+	public Usuario buscarUsuario(Usuario usuario){
+		return usuarioDAO.buscar(usuario);
+	}
 }
