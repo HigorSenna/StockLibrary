@@ -3,12 +3,29 @@ package br.com.system.StockLibrary.util;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
+import org.omnifaces.util.Messages;
+
 import br.com.stocklibrary.enuns.TipoMensagemEnum;
 
 public class MessagesAndRedirect {
 	
 	private static void manterMensagemAoRedirecionar(){
 		FacesContext.getCurrentInstance().getExternalContext().getFlash().setKeepMessages(true);		
+	}
+	
+	public static void exibirMensagemGlobalRedirect(String msg,String paginaRedirecionar,TipoMensagemEnum tipoMensagem){
+		
+		if(tipoMensagem.getValor().equals("S")){
+			Messages.addFlashGlobalInfo(msg);
+		}
+		else if(tipoMensagem.getValor().equals("E")){
+			Messages.addFlashGlobalError(msg);	
+		}
+		else{
+			Messages.addFlashGlobalWarn(msg);
+		}
+		
+		redirecionarPara(paginaRedirecionar);
 	}
 	
 	public static void exibirMensagemRedirect(String msg,String paginaRedirecionar,TipoMensagemEnum tipoMensagem){
@@ -25,7 +42,7 @@ public class MessagesAndRedirect {
 		}
 			
 		manterMensagemAoRedirecionar();
-		 FacesContext.getCurrentInstance().addMessage(null,formatoMensagem);
+		FacesContext.getCurrentInstance().addMessage(null,formatoMensagem);
 		redirecionarPara(paginaRedirecionar);
 	}
 	
