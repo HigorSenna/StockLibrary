@@ -1,13 +1,10 @@
 package br.com.stocklibrary.controller;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-
-import org.apache.commons.lang3.time.DateUtils;
 
 import br.com.stocklibrary.enuns.TipoMensagemEnum;
 import br.com.stocklibrary.service.MaterialService;
