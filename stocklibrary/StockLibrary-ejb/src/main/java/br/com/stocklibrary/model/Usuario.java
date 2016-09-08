@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import br.com.stocklibrary.enums.TipoUsuarioEnum;
+
 @NamedQuery(name="Usuario.buscarLoginSenha", 
 query="select u from Usuario u where u.login =:l and u.senha =:s")
 
@@ -31,7 +33,7 @@ public class Usuario implements Serializable{
 	private String senha;
 	
 	@Column(name = "tipo")
-	private String tipo = "C";
+	private String tipo = TipoUsuarioEnum.C.getValor();
 		
 	public Long getId() {
 		return id;
@@ -56,10 +58,17 @@ public class Usuario implements Serializable{
 	}
 	public void setTipo(String tipo) {
 		if(tipo !=null && tipo.equals("true")){
-			this.tipo = "A";
+			this.tipo = TipoUsuarioEnum.A.getValor();
 		}
 		else{
-			this.tipo = "C";
+			this.tipo = TipoUsuarioEnum.C.getValor();
 		}
+	}
+	
+	public String getTipoLabel(){
+		if(tipo.equals("C")){
+			return TipoUsuarioEnum.C.getLabel();
+		}
+		return TipoUsuarioEnum.A.getLabel();
 	}
 }
