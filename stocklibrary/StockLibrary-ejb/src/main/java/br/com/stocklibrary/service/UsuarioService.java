@@ -1,6 +1,7 @@
 package br.com.stocklibrary.service;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -22,5 +23,9 @@ public class UsuarioService implements Serializable{
 	
 	public Usuario buscarUsuario(Usuario usuario){
 		return usuarioDAO.buscar(usuario);
+	}
+	
+	public List<Usuario> buscarTodos() throws Exception{
+		return usuarioDAO.buscarTodos();
 	}
 }
